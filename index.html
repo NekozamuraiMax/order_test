@@ -1,0 +1,92 @@
+﻿<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>サンプル 予定変更の申請フォーム</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css">
+    <link rel="stylesheet" href="js/samplestyle.css">
+    <script src="js/initialize.js"></script>
+</head>
+<body>
+
+<form class="w-75 mx-auto" id="order">
+<label class="mt-3"><big><big>予定変更の申請フォーム</big></big></label>
+<p class="mt-3"><big>変更内容</big></p>
+<div>
+<select class="form-control w-100 mt-1" name="genre" id="genre" require>
+	<option disabled selected>選択して下さい</option>
+	<option value="reserve">利用日の追加</option>
+	<option value="calcel">利用日のキャンセル</option>
+	<option value="change">利用時間の変更</option>
+</select>
+</div>
+<p class="mt-3"><big>希望年月日</big><font color="red"><small>  *当日 ～ 30日後の範囲内まで</small></font></p>
+<div>
+<input type="text" class="form-control w-100 mt-1" id="datepicker" placeholder="タップしてください" readonly/>
+</div>
+<div>
+<p class="mt-3"><big>希望時刻</big><font color="red"><small>  *9:00 ～ 15:00の範囲内まで</small></font></p>
+<input type="time" name="scheduled-time" id="scheduled-time" value="12:00" min="09:00" max="15:00" disabled/>
+</div>
+<p class="mt-3"><big>その他(自由記載)</big></p>
+<textarea id="textarea" maxlength="100" rows="8" cols="40" placeholder="変更の理由や、他に希望等があれば、ご記入ください。（100文字以内）"></textarea>
+<p id="count">あと<span id="num"></span>文字</p>
+<input type="submit" id="submit" class="mt-4 btn btn-primary" value="送信" disabled>	<input type="button" id="cancel" class="mt-4 btn" value="キャンセル" >
+</form>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
+<script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
+<script src="js/datepicker-ja.js"></script>
+<script>
+const time = document.getElementById('scheduled-time');
+const select_type = document.getElementById('genre');
+select_type.onchange = () => {
+	if(select_type.selectedIndex == 1 || select_type.selectedIndex == 3){
+		time.disabled = false;
+	}else time.disabled = true;
+}
+
+const today = new Date();
+const date = document.getElementById('datepicker');
+$('#datepicker').datepicker({
+	numberOfMonths:1,
+	dateFormat:'yy/mm/dd',
+	minDate:today,
+	maxDate:'+1m',
+});
+
+const textarea = document.getElementById('textarea');
+const maxText = 100;
+textarea.onkeyup = () => {
+	let c_count = textarea.value.length;
+	let limitChar = maxText - c_count;
+	$('#num').text(limitChar);
+}
+
+const order = document.getElementById('order');
+const submit = document.getElementById('submit');
+order.onchange = () => {
+	if(select_type.selectedIndex !== 0 && date.value !== ""){
+		submit.disabled = false;
+	}else{
+		submit.disabled = true;
+	}
+}
+
+document.getElementById('submit').addEventListener('click', () => {
+	if(window.confirm('この内容で申請して宜しいですか？')) return true;
+	else event.preventDefault();
+}, false);
+
+document.getElementById('cancel').addEventListener('click', () => {
+	if(window.confirm('申請を中断しますか？')) window.close();
+	else event.preventDefault();
+});
+</script>
+
+</body>
+</html>
