@@ -4,7 +4,6 @@ const id = "1657662321-x9g6kPw2";
 liff.init({
 	'liffId':id
 }).then(() =>{
-	window.alert(id);
 }).catch((err) => {
 	window.alert(err);
 	console.log('LIFF Initialization failed ', err);
@@ -19,7 +18,7 @@ function sendText(text){
 	]).then(function(){
 		liff.closeWindow();
 	}).catch(function(error){
-		window.alert('Attention. Failed to send message ' + error);
+		window.alert('Failed to send message ' + error);
 	});
 }
 
