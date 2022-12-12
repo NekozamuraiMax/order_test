@@ -53,7 +53,7 @@ $(function(){
 		const date  = document.getElementById("datepicker").value;
 		const time  = document.getElementById("scheduled-time").value;
 		const freetxt= document.getElementById("textarea").value;
-		const message= '${genre}\n${date}\n${time}\n${freetxt}';
+		const message= genre + ',' + date + ',' + time + ',' + freetxt;
 		sendText(message);
 		return false;
 	});
