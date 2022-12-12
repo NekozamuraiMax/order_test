@@ -53,7 +53,7 @@ $(function(){
 		const date  = document.getElementById("datepicker").value;
 		const time  = document.getElementById("scheduled-time").value;
 		const freetxt= document.getElementById("textarea").value;
-		let message='no letter.';
+		let message='[申請内容]予定の追加\n' + '[指定日]' + date + '\n' + '[時間]' + time + '\n' + '[伝達事項]\n' + freetxt;
 		/*
 		if(genre=="reserve"){
 			message = '[申請内容]予定の追加\n'+'[指定日]'+date+'\n'+'[時間]'+time+'\n'+'[伝達事項]\n'+freetxt;
