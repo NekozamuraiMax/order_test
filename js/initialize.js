@@ -2,7 +2,7 @@
 const id = "1657662321-x9g6kPw2";
 
 liff.init({
-	liffId:id
+	liffId: '1657662321-x9g6kPw2'
 }).then(() =>{
 }).catch((err) => {
 	window.alert(err);
