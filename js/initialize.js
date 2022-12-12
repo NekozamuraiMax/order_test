@@ -10,7 +10,7 @@ function initializeLiff(id){
 	}).then(() =>{
 		initializeApp();
 	}).catch((err) => {
-		
+		window.alert(err);
 		console.log('LIFF Initialization failed ', err);
 	});
 }
