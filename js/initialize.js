@@ -1,4 +1,3 @@
-/*
 
 $(document).ready(function(){
 	const id = "1657662321-x9g6kPw2";
@@ -11,10 +10,11 @@ function initializeLiff(id){
 	}).then(() =>{
 		initializeApp();
 	}).catch((err) => {
+		window.alert('oops! initialization is failed.');
 		console.log('LIFF Initialization failed ', err);
 	});
 }
-
+/*
 function sendText(text){
 	liff.sendMessages([{
 		'type': 'text',
@@ -43,6 +43,5 @@ $(function(){
 	
 	sendText("test");
 	return false;
-})
-
-*/;
+});
+*/
