@@ -1,13 +1,30 @@
 ﻿
 const id = "1657662321-x9g6kPw2";
 
-liff.init({
-	liffId: '1657662321-x9g6kPw2'
-}).then(() =>{
-}).catch((err) => {
-	window.alert(err);
-	console.log('LIFF Initialization failed ', err);
-});
+window.onload = function(e){
+	liff.init({
+		liffId: '1657662321-x9g6kPw2'
+	}).then(() =>{
+		initializeApp();
+	}).catch((err) => {
+		window.alert(err);
+		console.log('LIFF Initialization failed ', err);
+	});
+};
+
+function initializeApp() {
+    // ログインチェック
+    if (liff.isLoggedIn()) {
+        //ログイン済
+        getLineData();
+    } else {
+        // 未ログイン
+        let result = window.confirm("LINE Loginしますか？");
+        if(result) {
+            liff.login();
+        }
+    }
+}
 
 function sendText(text){
 	liff.sendMessages([
