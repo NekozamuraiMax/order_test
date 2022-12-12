@@ -1,4 +1,4 @@
-
+﻿
 $(document).ready(function(){
 	const id = "1657662321-x9g6kPw2";
 	initializeLiff(id);
@@ -10,7 +10,7 @@ function initializeLiff(id){
 	}).then(() =>{
 		initializeApp();
 	}).catch((err) => {
-		window.alert('oops! initialization is failed.');
+		//window.alert('oops! initialization is failed.');
 		console.log('LIFF Initialization failed ', err);
 	});
 }
