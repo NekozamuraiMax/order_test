@@ -2,7 +2,7 @@
 const id = "1657662321-x9g6kPw2";
 
 liff.init({
-	'liffId':id
+	liffId:id
 }).then(() =>{
 }).catch((err) => {
 	window.alert(err);
@@ -12,8 +12,8 @@ liff.init({
 function sendText(text){
 	liff.sendMessages([
 		{
-		'type': 'text',
-		'text': "success."
+		type: 'text',
+		text: "success."
 		}
 	]).then(function(){
 		liff.closeWindow();
