@@ -27,16 +27,20 @@ function initializeApp() {
 }
 
 function sendText(text){
-	liff.sendMessages([
-		{
-		type: 'text',
-		text: "success."
-		}
-	]).then(function(){
-		liff.closeWindow();
-	}).catch(function(error){
-		window.alert('Failed to send message ' + error);
-	});
+	if(!liff.isInClient()){
+		window.alert('This button is unavailable as LIFF is currently being opened in an external browser.');
+	}else{
+		liff.sendMessages([
+			{
+			type: 'text',
+			text: "success."
+			}
+		]).then(function(){
+			liff.closeWindow();
+		}).catch(function(error){
+			window.alert('Failed to send message ' + error);
+		});
+	}
 }
 
 const params = (new URL(document.location)).searchParams;
