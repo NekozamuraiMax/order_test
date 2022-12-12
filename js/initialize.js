@@ -1,19 +1,15 @@
 ﻿
-$(document).ready(function(){
-	const id = "1657662321-x9g6kPw2";
-	initializeLiff(id);
+const id = "1657662321-x9g6kPw2";
+
+liff.init({
+	liffId:id
+}).then(() =>{
+		
+}).catch((err) => {
+	window.alert(err);
+	console.log('LIFF Initialization failed ', err);
 });
 
-function initializeLiff(id){
-	liff.init({
-		liffId:id
-	}).then(() =>{
-		
-	}).catch((err) => {
-		window.alert(err);
-		console.log('LIFF Initialization failed ', err);
-	});
-}
 function sendText(text){
 	liff.sendMessages([{
 		'type': 'text',
