@@ -8,13 +8,12 @@ function initializeLiff(id){
 	liff.init({
 		liffId:id
 	}).then(() =>{
-		initializeApp();
+		
 	}).catch((err) => {
 		window.alert(err);
 		console.log('LIFF Initialization failed ', err);
 	});
 }
-/*
 function sendText(text){
 	liff.sendMessages([{
 		'type': 'text',
@@ -44,4 +43,3 @@ $(function(){
 	sendText("test");
 	return false;
 });
-*/
