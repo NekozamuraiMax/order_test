@@ -16,7 +16,7 @@ function initializeApp() {
     // ログインチェック
     if (liff.isLoggedIn()) {
         //ログイン済
-        getLineData();
+        //getLineData();
     } else {
         // 未ログイン
         let result = window.confirm("LINE Loginしますか？");
