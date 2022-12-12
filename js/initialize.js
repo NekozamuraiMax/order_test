@@ -1,3 +1,5 @@
+/*
+
 $(document).ready(function(){
 	const id = "1657662321-x9g6kPw2";
 	initializeLiff(id);
@@ -28,7 +30,7 @@ const params = (new URL(document.location)).searchParams;
 const key = params.get('key');
 
 $(function(){
-	/*
+	
 	$('form').submit(function(){
 		const genre = document.getElementById("genre").value;
 		const date  = document.getElementById("datepicker").value;
@@ -38,7 +40,9 @@ $(function(){
 		sendText(message);
 		return false;
 	});
-	*/
+	
 	sendText("test");
 	return false;
-});
+})
+
+*/;
