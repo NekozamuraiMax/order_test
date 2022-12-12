@@ -1,11 +1,11 @@
 $(window).load(function(){
-	const liffId = "1657662321-x9g6kPw2";
-	initializeLiff(liffId);
+	const id = "1657662321-x9g6kPw2";
+	initializeLiff(id);
 });
 
-function initializeLiff(liffId){
+function initializeLiff(id){
 	liff.init({
-		liffId:liffId
+		liffId:id
 	}).then(() =>{
 		initializeApp();
 	}).catch((err) => {
@@ -16,7 +16,7 @@ function initializeLiff(liffId){
 function sendText(text){
 	liff.sendMessages([{
 		'type': 'text',
-		'text': text
+		'text': "success."
 	}]).then(function(){
 		liff.closeWindow();
 	}).catch(function(error){
