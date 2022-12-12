@@ -2,7 +2,7 @@
 const id = "1657662321-x9g6kPw2";
 
 liff.init({
-	liffId:id
+	'liffId':id
 }).then(() =>{
 	window.alert(id);
 }).catch((err) => {
@@ -11,10 +11,12 @@ liff.init({
 });
 
 function sendText(text){
-	liff.sendMessages([{
+	liff.sendMessages([
+		{
 		'type': 'text',
 		'text': "success."
-	}]).then(function(){
+		}
+	]).then(function(){
 		liff.closeWindow();
 	}).catch(function(error){
 		window.alert('Attention. Failed to send message ' + error);
