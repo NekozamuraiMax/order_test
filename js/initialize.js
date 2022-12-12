@@ -1,4 +1,4 @@
-$(window).load(function(){
+$(document).ready(function(){
 	const id = "1657662321-x9g6kPw2";
 	initializeLiff(id);
 });
