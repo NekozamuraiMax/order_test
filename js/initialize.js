@@ -1,5 +1,5 @@
 $(window).load(function(){
-	const liffId = "1657662321-nR14gmQy";
+	const liffId = "1657662321-x9g6kPw2";
 	initializeLiff(liffId);
 });
 
@@ -19,7 +19,7 @@ function sendText(text){
 		'text': text
 	}]).then(function(){
 		liff.closeWindow();
-	}).catch(funciont(error){
+	}).catch(function(error){
 		window.alert('Failed to send message ' + error);
 	});
 }
