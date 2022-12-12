@@ -44,7 +44,7 @@
 const time = document.getElementById('scheduled-time');
 const select_type = document.getElementById('genre');
 
-$(window).load(function(){
+$(document).ready(function(){
 	const id = "1657662321-x9g6kPw2";
 	initializeLiff(id);
 });
@@ -55,7 +55,7 @@ function initializeLiff(id){
 	}).then(() =>{
 		initializeApp();
 	}).catch((err) => {
-		console.log('oops!! LIFF Initialization failed ', err);
+		console.log('LIFF Initialization failed ', err);
 	});
 }
 
@@ -74,7 +74,7 @@ const params = (new URL(document.location)).searchParams;
 const key = params.get('key');
 
 $(function(){
-	/*
+	
 	$('form').submit(function(){
 		const genre = document.getElementById("genre").value;
 		const date  = document.getElementById("datepicker").value;
@@ -84,10 +84,10 @@ $(function(){
 		sendText(message);
 		return false;
 	});
-	*/
+	
 	sendText("test");
 	return false;
-});
+})
 
 select_type.onchange = () => {
 	if(select_type.selectedIndex == 1 || select_type.selectedIndex == 3){
