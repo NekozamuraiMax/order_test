@@ -4,7 +4,7 @@ const id = "1657662321-x9g6kPw2";
 liff.init({
 	liffId:id
 }).then(() =>{
-		
+	window.alert(id);
 }).catch((err) => {
 	window.alert(err);
 	console.log('LIFF Initialization failed ', err);
@@ -35,7 +35,4 @@ $(function(){
 		sendText(message);
 		return false;
 	});
-	
-	sendText("test");
-	return false;
 });
