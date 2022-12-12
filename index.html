@@ -83,7 +83,7 @@ document.getElementById('submit').addEventListener('click', () => {
 }, false);
 
 document.getElementById('cancel').addEventListener('click', () => {
-	if(window.confirm('申請を中断しますか？')) window.close();
+	if(window.confirm('申請を中断しますか？')) liff.closeWindow();
 	else event.preventDefault();
 });
 </script>
