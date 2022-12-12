@@ -17,7 +17,7 @@ function sendText(text){
 	}]).then(function(){
 		liff.closeWindow();
 	}).catch(function(error){
-		window.alert('Attention!!! Failed to send message ' + error);
+		window.alert('Attention. Failed to send message ' + error);
 	});
 }
 
