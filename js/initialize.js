@@ -53,10 +53,14 @@ $(function(){
 		const date  = document.getElementById("datepicker").value;
 		const time  = document.getElementById("scheduled-time").value;
 		const freetxt= document.getElementById("textarea").value;
-		let message="none";
+		let message="None. This is not message.";
 		
 		if(genre==='reserve'){
 			message = '[申請内容]予定の追加\n'+'[指定日]'+date+'\n'+'[時間]'+time+'\n'+'[伝達事項]\n'+freetxt+ '\n\n上記の内容で申請しました。';
+		}else if(genre==='cancel'){
+			message = '[申請内容]キャンセル\n'+'[指定日]'+date+'\n'+'[伝達事項]\n'+freetxt+ '\n\n上記の内容で申請しました。';
+		}else if(genre==='change'({
+			message = '[申請内容]利用時間の変更\n'+'[指定日]'+date+'\n'+'[時間]'+time+'\n'+'[伝達事項]\n'+freetxt+ '\n\n上記の内容で申請しました。';
 		}
 		sendText(message);
 		return false;
