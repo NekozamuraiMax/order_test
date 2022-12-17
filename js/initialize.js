@@ -1,5 +1,6 @@
-﻿
-const id = "1657662321-x9g6kPw2";
+const params = (new URL(document.location)).searchParams;
+const key = params.get('key');
+const id = params.get('id'); //"1657662321-x9g6kPw2";
 
 window.onload = function(e){
 	liff.init({
@@ -43,8 +44,7 @@ function sendText(text){
 	}
 }
 
-const params = (new URL(document.location)).searchParams;
-const key = params.get('key');
+
 
 $(function(){
 	
