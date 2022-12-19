@@ -17,7 +17,8 @@ function initializeApp() {
     // ログインチェック
     if (liff.isLoggedIn()) {
         //ログイン済
-
+	const name = params.get('name').toString();
+	$('#name').text(name);
     } else {
         // 未ログイン
         let result = window.confirm("LINE Loginしますか？");
@@ -27,7 +28,7 @@ function initializeApp() {
     }
 }
 
-const name = params.get('name').toString();
+
 
 function sendText(text){
 	if(!liff.isInClient()){
