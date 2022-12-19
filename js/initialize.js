@@ -1,10 +1,9 @@
 const url = new URL(document.location);
 const params = new URLSearchParams(url.search);
-const id = params.get('id');
 
 window.onload = function(e){
 	liff.init({
-		liffId: id
+		liffId: params.get('id');
 	}).then(() =>{
 		initializeApp();
 	}).catch((err) => {
@@ -13,11 +12,11 @@ window.onload = function(e){
 	});
 };
 
+const name = params.get('name').toString();
 function initializeApp() {
     // ログインチェック
     if (liff.isLoggedIn()) {
         //ログイン済
-	const name = params.get('name').toString();
 	$('#name').text(name);
     } else {
         // 未ログイン
