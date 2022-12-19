@@ -1,4 +1,5 @@
-const params = (new URL(document.location)).searchParams;
+const url = new URL(document.location);
+const params = new URLSearchParams(url.search);
 const id = params.get('id');
 
 window.onload = function(e){
