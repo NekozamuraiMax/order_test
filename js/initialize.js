@@ -26,6 +26,9 @@ function initializeApp() {
     }
 }
 
+const name = params.get('name');
+window.alert(name);
+
 function sendText(text){
 	if(!liff.isInClient()){
 		window.alert('This button is unavailable as LIFF is currently being opened in an external browser.');
