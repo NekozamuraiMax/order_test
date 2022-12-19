@@ -12,12 +12,11 @@ window.onload = function(e){
 	});
 };
 
-var name = 'no name';
 function initializeApp() {
     // ログインチェック
     if (liff.isLoggedIn()) {
         //ログイン済
-	name = params.get('name').toString();
+	const name = params.get('name').toString();
 	$('#name').text(name);
     } else {
         // 未ログイン
