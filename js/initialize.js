@@ -27,7 +27,7 @@ function initializeApp() {
     }
 }
 
-const name = params.get('name');
+const name = params.get('name').toString();
 window.alert(name);
 
 function sendText(text){
