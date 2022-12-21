@@ -59,11 +59,11 @@ $(function(){
 		let message="None. This is not message.";
 		
 		if(genre==='reserve'){
-			message = '[児童名]' + name + '\n[申請内容]予定の追加\n'+'[指定日]'+date+'\n'+'[時間]'+time+'\n'+'[伝達事項]\n'+freetxt;
+			message = '[児童名]\n' + name + '\n[申請内容]\n予定の追加\n'+'[指定日]\n'+date+'\n'+'[時間]\n'+time+'\n'+'[伝達事項]\n'+freetxt;
 		}else if(genre==='cancel'){
-			message = '[児童名]' + name + '\n[申請内容]キャンセル\n'+'[指定日]'+date+'\n'+'[伝達事項]\n'+freetxt;
+			message = '[児童名]\n' + name + '\n[申請内容]\nキャンセル\n'+'[指定日]\n'+date+'\n'+'[伝達事項]\n'+freetxt;
 		}else if(genre==='change'){
-			message = '[児童名]' + name + '\n[申請内容]利用時間の変更\n'+'[指定日]'+date+'\n'+'[時間]'+time+'\n'+'[伝達事項]\n'+freetxt;
+			message = '[児童名]\n' + name + '\n[申請内容]\n利用時間の変更\n'+'[指定日]\n'+date+'\n'+'[時間]\n'+time+'\n'+'[伝達事項]\n'+freetxt;
 		}
 		sendText(message);
 		return false;
