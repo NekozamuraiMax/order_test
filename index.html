@@ -30,8 +30,9 @@
 <input type="text" class="form-control w-100 mt-1" id="datepicker" placeholder="タップしてください" readonly/>
 </div>
 <div>
-<p class="mt-3"><big>希望時刻</big><font color="red"><small>  *9:00 ～ 15:00の範囲内まで</small></font></p>
-<input type="time" name="scheduled-time" id="scheduled-time" value="12:00" min="09:00" max="15:00" disabled/>
+<p class="mt-3"><big>希望時刻</big><font color="red"><small>  *9:00 ～ 17:00の範囲内まで</small></font></p>
+<input type="time" name="scheduled-time" id="scheduled-time" value="12:00" min="09:00" max="15:00" disabled/> ～ 
+<input type="time" id="end-time" value="13:00" min="11:00" max="17:00" disabled/>
 </div>
 <p class="mt-3"><big>その他(自由記載)</big></p>
 <textarea id="textarea" maxlength="100" rows="8" cols="40" placeholder="変更の理由や、他に希望等があれば、ご記入ください。（100文字以内）"></textarea>
@@ -47,12 +48,19 @@
 <script charset ="utf-8" src="js/initialize.js"></script>
 <script>
 const time = document.getElementById('scheduled-time');
+const e_time = document.getElementById('end-time');
 const select_type = document.getElementById('genre');
 
 select_type.onchange = () => {
 	if(select_type.selectedIndex == 1 || select_type.selectedIndex == 3){
 		time.disabled = false;
-	}else time.disabled = true;
+	}else if(select_type.selectedIndex == 3){
+		time.disabled = false;
+		e_time.disabled = false;
+	}else{
+		time.disabled = true;
+		e_time.disabled = true;
+	}
 }
 
 const today = new Date();
