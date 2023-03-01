@@ -52,7 +52,7 @@ const e_time = document.getElementById('end-time');
 const select_type = document.getElementById('genre');
 
 select_type.onchange = () => {
-	if(select_type.selectedIndex == 1 || select_type.selectedIndex == 3){
+	if(select_type.selectedIndex == 1){
 		time.disabled = false;
 	}else if(select_type.selectedIndex == 3){
 		time.disabled = false;
