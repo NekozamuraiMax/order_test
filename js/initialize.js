@@ -55,6 +55,7 @@ $(function(){
 		const genre = document.getElementById("genre").value;
 		const date  = document.getElementById("datepicker").value;
 		const time  = document.getElementById("scheduled-time").value;
+		const e_time= document.getElementById("end-time").value;
 		const freetxt= document.getElementById("textarea").value;
 		let message="None. This is not message.";
 		
@@ -63,7 +64,7 @@ $(function(){
 		}else if(genre==='cancel'){
 			message = '[児童名]\n' + name + '\n[申請内容]\nキャンセル\n'+'[指定日]\n'+date+'\n'+'[伝達事項]\n'+freetxt;
 		}else if(genre==='change'){
-			message = '[児童名]\n' + name + '\n[申請内容]\n利用時間の変更\n'+'[指定日]\n'+date+'\n'+'[時間]\n'+time+'\n'+'[伝達事項]\n'+freetxt;
+			message = '[児童名]\n' + name + '\n[申請内容]\n利用時間の変更\n'+'[指定日]\n'+date+'\n'+'[時間]\n'+time+'～'+e_time+'\n'+'[伝達事項]\n'+freetxt;
 		}
 		sendText(message);
 		return false;
