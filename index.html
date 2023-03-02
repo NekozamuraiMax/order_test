@@ -45,7 +45,6 @@
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
 <script src="js/datepicker-ja.js"></script>
-<script src="https://cdn.rawgit.com/osamutake/japanese-holidays-js/v1.0.10/lib/japanese-holidays.min.js"></script>
 <script charset ="utf-8" src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
 <script charset ="utf-8" src="js/initialize.js"></script>
 <script>
@@ -67,8 +66,7 @@ const today = new Date();
 const date = document.getElementById('datepicker');
 $('#datepicker').datepicker({
 	beforeShowDay: function (e) {
-		let holiday = JapaneseHolidays.isHoliday(e);
-		if (e.getDay() == 0 || e.getDay() == 6 || holiday) {
+		if (e.getDay() == 0 || e.getDay() == 6) {
 			return [false, "ui-state-disabled"];
 		}else{
 			return [true, ""];
@@ -83,8 +81,7 @@ $('#datepicker').datepicker({
 $("#datepicker").on("change", function(){
 	let val = $(this).val();
 	let tdate = new Date(val);
-	let holiday = JapaneseHolidays.isHoliday(date);
-	if(tdate.getDay() == 0 || tdate.getDay() == 6 || holiday){
+	if(tdate.getDay() == 0 || tdate.getDay() == 6){
 		window.alert("その日は選択できません｡");
 		$(this).val("");
 	}
