@@ -9,3 +9,15 @@ margin:0;
 #cancel{
 	background-color: silver;
 }
+
+.sunday .ui-state-default {
+	color: red;
+}
+
+.saturday .ui-state-default {
+	color: blue;
+}
+
+.holiday .ui-state-default {
+	color: red;
+}
