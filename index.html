@@ -1,4 +1,4 @@
-﻿<html>
+<html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -65,13 +65,6 @@ select_type.onchange = () => {
 const today = new Date();
 const date = document.getElementById('datepicker');
 $('#datepicker').datepicker({
-	beforeShowDay: function (e) {
-		if (e.getDay() == 0 || e.getDay() == 6) {
-			return [false, "ui-state-disabled"];
-		}else{
-			return [true, ""];
-		}
-	}
 	numberOfMonths:1,
 	dateFormat:'yy/mm/dd',
 	minDate:today,
