@@ -66,9 +66,9 @@ select_type.onchange = () => {
 const today = new Date();
 const date = document.getElementById('datepicker');
 $('#datepicker').datepicker({
-	beforeShowDay: function (date) {
-		let holiday = JapaneseHolidays.isHoliday(date);
-		if (date.getDay() == 0 || date.getDay() == 6 || holiday) {
+	beforeShowDay: function (e) {
+		let holiday = JapaneseHolidays.isHoliday(e);
+		if (e.getDay() == 0 || e.getDay() == 6 || holiday) {
 			return [false, "ui-state-disabled"];
 		}else{
 			return [true, ""];
