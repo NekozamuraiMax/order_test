@@ -67,9 +67,7 @@ const today = new Date();
 const date = document.getElementById('datepicker');
 $('#datepicker').datepicker({
 	beforeShowDay: function (date) {
-		//祝日かどうか
 		let holiday = JapaneseHolidays.isHoliday(date);
-		//日曜(0)または土曜(6)または祝日のとき
 		if (date.getDay() == 0 || date.getDay() == 6 || holiday) {
 			return [false, "ui-state-disabled"];
 		}else{
@@ -87,7 +85,7 @@ $("#datepicker").on("change", function(){
 	let tdate = new Date(val);
 	let holiday = JapaneseHolidays.isHoliday(date);
 	if(tdate.getDay() == 0 || tdate.getDay() == 6 || holiday){
-		alert("その日は選択できません｡");
+		window.alert("その日は選択できません｡");
 		$(this).val("");
 	}
 });
