@@ -69,7 +69,7 @@ $('#datepicker').datepicker({
 	numberOfMonths:1,
 	dateFormat:'yy/mm/dd',
 	minDate:today,
-	maxDate:'+1m'
+	maxDate:'+1m',
 	beforeShowDay: function(input){
 		if (input.getDay() == 0 || input.getDay() == 6) {
 			return [false, "ui-state-disabled"];
