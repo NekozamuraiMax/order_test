@@ -99,9 +99,11 @@ $("#datepicker").on("change", function(){
 	let val = $(this).val();
 	let dDate = new Date(val);
 	let holiday = JapaneseHolidays.isHoliday(dDate);
-	if(dDate.getDay() == 0 || dDate.getDay() == 6){
-		window.alert("特定の土曜日、日曜日、祝日は選択できません｡");
-		$(this).val("");
+	if(dDate.getDay() == 0 || dDate.getDay() == 6 || holiday){
+		if(!$(this).classList.contains('calender-saturday'){
+			window.alert("特定の土曜日、日曜日、祝日は選択できません｡");
+			$(this).val("");
+		}
 	}
 });
 	
