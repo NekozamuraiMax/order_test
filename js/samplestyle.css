@@ -9,3 +9,7 @@ margin:0;
 #cancel{
 	background-color: silver;
 }
+
+.calender-saturday a.ui-state-default{
+	background-color: #c1e0ff;
+}
