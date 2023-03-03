@@ -10,6 +10,10 @@ margin:0;
 	background-color: silver;
 }
 
+.itemLine{
+	background:linear-gradient(transparent 70%, #FF0000 0%);
+}
+
 .calender-saturday a.ui-state-default{
 	background-color: #c1e0ff;
 }
