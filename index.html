@@ -70,6 +70,7 @@ $('#datepicker').datepicker({
 	dateFormat:'yy/mm/dd',
 	minDate:today,
 	maxDate:'+1m'
+	beforeShow: function(input){}
 });
 
 const textarea = document.getElementById('textarea');
