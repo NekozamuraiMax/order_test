@@ -99,10 +99,25 @@ $("#datepicker").on("change", function(){
 	let val = $(this).val();
 	let dDate = new Date(val);
 	let holiday = JapaneseHolidays.isHoliday(dDate);
-	if(dDate.getDay() == 0 || dDate.getDay() == 6 || holiday){
-		if(!$(this).classList.contains('calender-saturday'){
-			window.alert("特定の土曜日、日曜日、祝日は選択できません｡");
-			$(this).val("");
+	if(dDate.getDay() == 0 || holiday){
+		window.alert("日曜日、祝日は選択できません｡");
+		$(this).val("");
+	}else if(dDate.getDay() == 6){
+		const tempYear = input.getFullYear();
+		const tempMonth= input.getMonth();
+		let wc = 0;
+		let rw = [];
+		for(let i=1; i<=31; i++){
+			const tmpDate = new Date(tempYear, tempMonth, i);
+			if(tmpDate.getDay() != 6) continue;
+			wc = wc+1;
+			if(wc%2 == 0) rw.push(tmpDate);
+		}
+		for(let i=0; i<rw.length; i++){
+			if(rw[i].getDate() == input.getDate()){
+				window.alert("第二、第三土曜日は選択できません。");
+				$(this).val("");
+			}
 		}
 	}
 });
