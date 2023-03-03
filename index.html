@@ -32,12 +32,15 @@
 <div>
 <p class="mt-3"><big>希望時刻</big></p>
 <p class="mt-3"><font color="red"><small>  *9:00 ～ 17:00の範囲内まで</small></font></p>
-<p class="mt-3">来所：<input type="time" class="form-control w-40 mt-1" name="scheduled-time" id="scheduled-time" value="12:00" min="09:00" max="15:00" disabled/><input type="checkbox" id="sCar" disabled/>迎え希望</p>
-<p class="mt-3">退所：<input type="time" class="form-control w-40 mt-1" id="end-time" value="13:00" min="11:00" max="17:00" disabled/><input type="checkbox" id="eCar" disabled/>送り希望</p>
+<p class="mt-3">来所：<input type="time" class="form-control w-40 mt-1" name="scheduled-time" id="scheduled-time" value="12:00" min="09:00" max="15:00" disabled/></p>
+	<p class="mt-3"><input type="checkbox" id="afterSchool" disabled/>下校後来所</p>
+<p class="mt-3">退所：<input type="time" class="form-control w-40 mt-1" id="end-time" value="13:00" min="11:00" max="17:00" disabled/></p>
 </div>
 <p class="mt-3"><big>その他(自由記載)</big></p>
-<textarea id="textarea" maxlength="100" rows="8" cols="40" placeholder="変更の理由や、他に希望等があれば、ご記入ください。（100文字以内）"></textarea>
+<textarea id="textarea" maxlength="100" rows="8" cols="40" placeholder="変更の理由や、送迎についてのご相談等がありましたら、ご記入ください。（100文字以内）"></textarea>
 <p id="count">あと<span id="num"></span>文字</p>
+	<p class="mt-3"><big>送迎の有無</big></p><font color="red"><small>  *送迎を希望される場合、来所・退所時刻は各事業所の定めた時刻となります。</small></font>
+	<p class="mt-3"><input type="checkbox" id="sCar" disabled />迎え希望<input type="checkbox" id="eCar" disabled />送り希望</p>
 <input type="submit" id="submit" class="mt-4 btn btn-primary" value="送信" disabled>	<input type="button" id="cancel" class="mt-4 btn" value="キャンセル" >
 </form>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -57,6 +60,9 @@ select_type.onchange = () => {
 	if(select_type.selectedIndex == 1 || select_type.selectedIndex == 3){
 		time.disabled = false;
 		e_time.disabled = false;
+		$("#afterSchool").disabled = false;
+		$("#sCar").disabled = false;
+		$("#eCar").disabled = false;
 	}else{
 		time.disabled = true;
 		e_time.disabled = true;
@@ -95,34 +101,7 @@ $('#datepicker').datepicker({
 		}
 	}
 });
-/*
-$("#datepicker").on("change", function(){
-	let val = $(this).val();
-	let dDate = new Date(val);
-	let holiday = JapaneseHolidays.isHoliday(dDate);
-	if(dDate.getDay() == 0 || holiday){
-		window.alert("日曜日、祝日は選択できません｡");
-		$(this).val("");
-	}else if(dDate.getDay() == 6){
-		const tempYear = input.getFullYear();
-		const tempMonth= input.getMonth();
-		let wc = 0;
-		let rw = [];
-		for(let i=1; i<=31; i++){
-			const tmpDate = new Date(tempYear, tempMonth, i);
-			if(tmpDate.getDay() != 6) continue;
-			wc = wc+1;
-			if(wc%2 == 0) rw.push(tmpDate);
-		}
-		for(let i=0; i<rw.length; i++){
-			if(rw[i].getDate() == input.getDate()){
-				window.alert("第二、第三土曜日は選択できません。");
-				$(this).val("");
-			}
-		}
-	}
-});
-*/	
+
 const textarea = document.getElementById('textarea');
 const maxText = 100;
 textarea.onkeyup = () => {
