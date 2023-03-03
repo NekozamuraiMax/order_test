@@ -72,6 +72,13 @@ select_type.onchange = () => {
 	}
 }
 
+afterSchool.addEventListener('click', (e) => {
+	if(afterSchool.checked == true) time.disabled = true;
+	else{
+		time.disabled = false;
+	}
+});
+
 const today = new Date();
 const date = document.getElementById('datepicker');
 $('#datepicker').datepicker({
