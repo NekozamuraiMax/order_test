@@ -89,7 +89,7 @@ $('#datepicker').datepicker({
 			for(let i=0; i<rw.length; i++){
 				if(rw[i].getDate() == input.getDate()) return [false, "ui-state-disabled"];
 			}
-			return [true, ""];
+			return [true, "calender-saturday", ""];
 		}else{
 			return [true, ""];
 		}
