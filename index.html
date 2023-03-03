@@ -72,14 +72,6 @@ $('#datepicker').datepicker({
 	maxDate:'+1m'
 });
 
-$("#datepicker").on("change", function(){
-	let val = $(this).val();
-	let tdate = new Date(val);
-	if(tdate.getDay() == 0 || tdate.getDay() == 6){
-		window.alert("その日は選択できません｡");
-		$(this).val("");
-	}
-});
 const textarea = document.getElementById('textarea');
 const maxText = 100;
 textarea.onkeyup = () => {
