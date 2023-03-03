@@ -71,8 +71,7 @@ $('#datepicker').datepicker({
 	minDate:today,
 	maxDate:'+1m'
 	beforeShowDay: function(input){
-		let holiday = JapaneseHolidays.isHoliday(input);
-		if (input.getDay() == 0 || input.getDay() == 6 || holiday) {
+		if (input.getDay() == 0 || input.getDay() == 6) {
 			return [false, "ui-state-disabled"];
 		}else{
 			return [true, ""];
@@ -82,9 +81,7 @@ $('#datepicker').datepicker({
 $("#datepicker").on("change", function(){
 	let val = $(this).val();
 	let dDate = new Date(val);
-	let holiday = JapaneseHolidays.isHoliday(dDate);
-	//土日または祝日のとき
-	if(dDate.getDay() == 0 || dDate.getDay() == 6 || holiday){
+	if(dDate.getDay() == 0 || dDate.getDay() == 6){
 		window.alert("土曜日、日曜日は選択できません｡");
 		$(this).val("");
 	}
