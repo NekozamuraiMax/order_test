@@ -78,7 +78,16 @@ $('#datepicker').datepicker({
 		}
 	}
 });
-
+$("#datepicker").on("change", function(){
+	let val = $(this).val();
+	let dDate = new Date(val);
+	//土日または祝日のとき
+	if(dDate.getDay() == 0 || dDate.getDay() == 6){
+		window.alert("土曜日、日曜日は選択できません｡");
+		$(this).val("");
+	}
+});
+	
 const textarea = document.getElementById('textarea');
 const maxText = 100;
 textarea.onkeyup = () => {
