@@ -83,9 +83,9 @@ $('#datepicker').datepicker({
 				//if(tempMonth != tmpDate.getMonth()) break;
 				if(tmpDate.getDay() != 6) continue;
 				wc = wc+1;
-				if(wc%2 < 1) return [false, "ui-state-disabled"];
+				if(wc%2 == 1) return [true, ""];
 			}
-			return [true, ""];
+			return [false, "ui-state-disabled"];
 		}else{
 			return [true, ""];
 		}
