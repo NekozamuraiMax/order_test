@@ -11,7 +11,8 @@ margin:0;
 }
 
 .itemLine{
-	background:linear-gradient(transparent 70%, #00bfff 0%);
+	background:linear-gradient(transparent 60%, #00bfff 60%);
+	border-radius: 80% 50% 60% 5%/80% 75% 15% 75%;
 }
 
 .calender-saturday a.ui-state-default{
