@@ -62,10 +62,10 @@ const endCar = document.getElementById('eCar');
 
 select_type.onchange = () => {
 	if(select_type.selectedIndex == 1 || select_type.selectedIndex == 3){
-		time.disabled = false;
+		//time.disabled = false;
 		e_time.disabled = false;
 		afterSchool.disabled = false;
-		//startCar.disabled = false;
+		startCar.disabled = false;
 		endCar.disabled = false;
 	}else{
 		time.disabled = true;
