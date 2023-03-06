@@ -50,21 +50,44 @@ function sendText(text){
 
 
 $(function(){
-	
 	$('form').submit(function(){
 		const genre = document.getElementById("genre").value;
 		const date  = document.getElementById("datepicker").value;
 		const time  = document.getElementById("scheduled-time").value;
 		const e_time= document.getElementById("end-time").value;
 		const freetxt= document.getElementById("textarea").value;
+		const afterSchool = document.getElementById('afterSchool');
+		const startCar = document.getElementById('sCar');
+		const endCar = document.getElementById('eCar');
 		let message="None. This is not message.";
 		
+		let timeMes="";
+		let scar = "迎え：";
+		let ecar = "送り：";
 		if(genre==='reserve'){
-			message = '[児童名]\n' + name + '\n[申請内容]\n予定の追加\n'+'[指定日]\n'+date+'\n'+'[時間]\n'+time+'\n'+'[伝達事項]\n'+freetxt;
+			(afterSchool.checked) ? timeMes = timeMes+"下校後来所" : timeMes = timeMes + time;
+			(startCar.checked) ? scar = scar + "有\n" : scar = scar + "無\n";
+			if(endCar.checked){
+				timeMes = timeMes + '~送迎車送り';
+				ecar = ecar + "有\n";
+			}else{
+				timeMes = timeMes + '~' + e_time;
+				ecar = ecar + "無\n";
+			}
+			message = '[児童名]\n' + name + '\n[申請内容]\n予定の追加\n'+'[指定日]\n'+date+'\n'+'[時間]\n'+ timeMes +'\n'+ '[送迎車]\n' + scar + ecar + '[伝達事項]\n'+freetxt;
 		}else if(genre==='cancel'){
 			message = '[児童名]\n' + name + '\n[申請内容]\nキャンセル\n'+'[指定日]\n'+date+'\n'+'[伝達事項]\n'+freetxt;
 		}else if(genre==='change'){
-			message = '[児童名]\n' + name + '\n[申請内容]\n利用時間の変更\n'+'[指定日]\n'+date+'\n'+'[時間]\n'+time+'～'+e_time+'\n'+'[伝達事項]\n'+freetxt;
+			(afterSchool.checked) ? timeMes = timeMes+"下校後来所" : timeMes = timeMes + time;
+			(startCar.checked) ? scar = scar + "有\n" : scar = scar + "無\n";
+			if(endCar.checked){
+				timeMes = timeMes + '~送迎車送り';
+				ecar = ecar + "有\n";
+			}else{
+				timeMes = timeMes + '~' + e_time;
+				ecar = ecar + "無\n";
+			}
+			message = '[児童名]\n' + name + '\n[申請内容]\n時間の変更\n'+'[指定日]\n'+date+'\n'+'[時間]\n'+ timeMes +'\n'+ '[送迎車]\n' + scar + ecar + '[伝達事項]\n'+freetxt;
 		}
 		sendText(message);
 		return false;
