@@ -51,6 +51,8 @@ function sendText(text){
 
 $(function(){
 	$('form').submit(function(){
+		$.post('', $('form').serialize());
+		/*
 		const genre = document.getElementById("genre").value;
 		const date  = document.getElementById("datepicker").value;
 		const time  = document.getElementById("scheduled-time").value;
@@ -90,6 +92,7 @@ $(function(){
 			message = '[児童名]\n' + name + '\n[申請内容]\n時間の変更\n'+'[指定日]\n'+date+'\n'+'[時間]\n'+ timeMes +'\n'+ '[送迎車]\n' + scar + ecar + '[伝達事項]\n'+freetxt;
 		}
 		sendText(message);
+		*/
 		return false;
 	});
 });
