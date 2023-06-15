@@ -18,7 +18,10 @@ function initializeApp() {
     // ログインチェック
     if (liff.isLoggedIn()) {
         //ログイン済
+	const idToken = liff.getDecodedIDToken();
+      	const userId = idToken.sub;
 	$('#name').text(name);
+	$('form').append('<input type="hidden" name="userId" value="${userId}">');
     } else {
         // 未ログイン
         let result = window.confirm("LINE Loginしますか？");
