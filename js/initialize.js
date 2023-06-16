@@ -57,7 +57,7 @@ $(function(){
 	$('form').submit(function(){
 		let res = $('form').serialize();
 		window.alert(res);
-		$.post('https://script.google.com/macros/s/AKfycbzEzW9Kkur0u9OWvNWPtD7Du58nBSDOJTU4OirtH880JEM8LK-jER7FI1le7MoRESM_Tw/exec', $('form').serialize());
+		$.post('https://script.google.com/macros/s/AKfycbxkdlRMYEeyB8LFugjPs7-AAls4qLmuf0MhYaKP4jd_JU1SxbHWXZanAs26zCe5mNq18Q/exec', $('form').serialize());
 		/*
 		const genre = document.getElementById("genre").value;
 		const date  = document.getElementById("datepicker").value;
