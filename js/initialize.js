@@ -23,8 +23,8 @@ function initializeApp() {
 	$('#name').text(name);
 	$('form').append('<input type="hidden" name="userId" id="userId">');
 	$('form').append('<input type="hidden" name="nameinput" id="nameinput">');
-	$('#userId').value = userId;
-	$('#nameinput').value = name;
+	document.getElementById("userId").value = userId;
+	document.getElementById("nameinput").value = name;
     } else {
         // 未ログイン
         let result = window.confirm("LINE Loginしますか？");
