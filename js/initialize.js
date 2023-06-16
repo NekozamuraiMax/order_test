@@ -21,8 +21,10 @@ function initializeApp() {
 	const idToken = liff.getDecodedIDToken();
       	const userId = idToken.sub;
 	$('#name').text(name);
-	$('form').append('<input type="hidden" name="userId" value=${userId}>');
-	$('form').append('<input type="hidden" name="nameinput" value=${name}>');
+	$('form').append('<input type="hidden" name="userId" id="userId">');
+	$('form').append('<input type="hidden" name="nameinput" id="nameinput">');
+	$('#userId').value = userId;
+	$('#nameinput').value = name;
     } else {
         // 未ログイン
         let result = window.confirm("LINE Loginしますか？");
