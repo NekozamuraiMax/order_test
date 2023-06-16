@@ -59,7 +59,7 @@ $(function(){
 	$('form').submit(function(){
 		let res = $('form').serialize();
 		window.alert(res);
-		$.post('https://script.google.com/macros/s/AKfycbxkdlRMYEeyB8LFugjPs7-AAls4qLmuf0MhYaKP4jd_JU1SxbHWXZanAs26zCe5mNq18Q/exec', $('form').serialize());
+		$.post('https://script.google.com/macros/s/AKfycbyivI50aIhGVOsVIQnpWMbhxAoP5WzLz8ECiKSEwjz1blR6mC-aCBz5TIS8Dcwy0WOhRA/exec', $('form').serialize());
 		/*
 		const genre = document.getElementById("genre").value;
 		const date  = document.getElementById("datepicker").value;
