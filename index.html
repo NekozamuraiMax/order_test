@@ -46,6 +46,7 @@
 	</p>
 	</div>
 	<div id="fromWhere">
+	<div class="errorDiv">半角記号は入れないで下さい。</div>
 	<input tyle="text" name="fname" id="fName" placeholder="目印となるような場所名をご記入ください。" />
 	</div>
 <p class="mt-3">退所：
@@ -60,10 +61,12 @@
 	</p>
 	</div>
 	<div id="toWhere">
+	<div class="errorDiv">半角記号は入れないで下さい。</div>
 	<input tyle="text" name="tname" id="tName" placeholder="目印となるような場所名をご記入ください。" />
 	</div>
 </div>
 	<p class="mt-3"><span class="itemLine"><big>その他(自由記載)</big></span></p>
+	<div class="errorDiv">半角記号は入れないで下さい。</div>
 <textarea id="textarea" name="memo" maxlength="100" rows="8" cols="40" placeholder="変更の理由や、送迎についてのご相談等がありましたら、ご記入ください。（100文字以内）"></textarea>
 <p id="count">あと<span id="num"></span>文字</p>
 <input type="submit" id="submit" class="mt-4 btn btn-primary" value="送信" disabled>	<input type="button" id="cancel" class="mt-4 btn" value="キャンセル" >
