@@ -6,6 +6,14 @@ padding: 1em;
 margin:0;
 }
 
+#from{
+	display:none;
+}
+
+#to{
+	display:none;
+}
+
 #cancel{
 	background-color: silver;
 }
