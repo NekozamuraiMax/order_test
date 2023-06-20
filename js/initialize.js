@@ -57,7 +57,9 @@ function sendText(text){
 
 $(function(){
 	$('form').submit(function(){
-		$.post('https://script.google.com/macros/s/AKfycby92TQk8joAIjX8EnwTvE8-pxiKX2Qa74GpUw7XjF5nbFpsUrja7QvVayynjs_PrL-LXg/exec', $('form').serialize());
+		let res = $('form').serialize();
+		window.alert(res);
+		$.post('https://script.google.com/macros/s/AKfycby92TQk8joAIjX8EnwTvE8-pxiKX2Qa74GpUw7XjF5nbFpsUrja7QvVayynjs_PrL-LXg/exec', res);
 		/*
 		const genre = document.getElementById("genre").value;
 		const date  = document.getElementById("datepicker").value;
