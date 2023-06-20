@@ -175,7 +175,10 @@ order.onchange = () => {
 	}else toWhere.style.display = "none";
 }
 
+const regex = new RegExp('[!-/:-@¥[-`{-~]+', 'g');
 document.getElementById('submit').addEventListener('click', () => {
+	if(regex.test(fromWhere.value)){
+	}
 	if(window.confirm('この内容で申請して宜しいですか？')) return true;
 	else event.preventDefault();
 }, false);
