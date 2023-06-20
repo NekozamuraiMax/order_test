@@ -6,14 +6,21 @@ padding: 1em;
 margin:0;
 }
 
-#from{
+#fromDiv{
 	display:none;
 }
 
-#to{
+#toDiv{
 	display:none;
 }
 
+#fromWhere{
+	display:none;
+}
+
+#toWhere{
+	display:none;
+}
 #cancel{
 	background-color: silver;
 }
