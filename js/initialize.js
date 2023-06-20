@@ -58,8 +58,8 @@ function sendText(text){
 $(function(){
 	$('form').submit(function(){
 		let res = $('form').serialize();
-		window.alert(res);
-		$.post('https://script.google.com/macros/s/AKfycby92TQk8joAIjX8EnwTvE8-pxiKX2Qa74GpUw7XjF5nbFpsUrja7QvVayynjs_PrL-LXg/exec', res);
+		//window.alert(res);
+		$.post('https://script.google.com/macros/s/AKfycbziH-qcGTwIF9MveS2UmMksPN_SXw2MFwrzDJ-NM_fNeaPGlltnVaEfVSddE8jAZpaTKg/exec', res);
 		/*
 		const genre = document.getElementById("genre").value;
 		const date  = document.getElementById("datepicker").value;
