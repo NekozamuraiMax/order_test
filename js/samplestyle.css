@@ -6,6 +6,11 @@ padding: 1em;
 margin:0;
 }
 
+.errorDiv{
+	background:red;
+	display:none;
+}
+
 #fromDiv{
 	display:none;
 }
