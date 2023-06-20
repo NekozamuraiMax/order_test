@@ -57,7 +57,6 @@ function sendText(text){
 
 $(function(){
 	$('form').submit(function(){
-		let res = $('form').serialize();
 		$.post('https://script.google.com/macros/s/AKfycbwlf_r9xPpjmIa0QZcy4quLnIu8kfyjWxMXxC4xSRvABKUlL0CFO8U8qRvcZY9NiW5JZA/exec', $('form').serialize());
 		/*
 		const genre = document.getElementById("genre").value;
