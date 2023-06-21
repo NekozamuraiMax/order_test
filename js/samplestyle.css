@@ -35,6 +35,11 @@ margin:0;
 	border-radius: 80% 50% 60% 5%/80% 75% 15% 75%;
 }
 
+.itemLine2{
+	background:Linear-gradient(transparent 60%, #ffd700 60%);
+	border-radius: 50% 30% 40% 60%/5% 15% 70% 85%;
+}
+
 .calender-saturday a.ui-state-default{
 	background-color: #c1e0ff;
 }
