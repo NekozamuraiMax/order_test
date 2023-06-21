@@ -60,6 +60,7 @@ $(function(){
 		let res = $('form').serialize();
 		//window.alert(res);
 		$.post('https://script.google.com/macros/s/AKfycbzTQrKXdKxsACWR96ApfZIhnnkVoHjB0MEuPowz0CQcA1SCR0BJMd9b4-qyJa88HiyabQ/exec', res);
+		liff.closeWindow();
 		/*
 		const genre = document.getElementById("genre").value;
 		const date  = document.getElementById("datepicker").value;
