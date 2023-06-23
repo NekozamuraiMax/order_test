@@ -204,6 +204,8 @@ const regex = new RegExp('[!-/:-@¥[-`{-~]+', 'g');
 const fromError = document.getElementById("fromError");
 const toError = document.getElementById("toError");
 const textError = document.getElementById("textError");
+const fromNotPlace = document.getElementById("fromNotPlace");
+const toNotPlace = document.getElementById("toNotPlace");
 document.getElementById('submit').addEventListener('click', () => {
 	let errCount = 0;
 	if(fromSelect.selectedIndex===2 && startCar.checked === true){
