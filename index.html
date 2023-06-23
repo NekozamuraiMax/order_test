@@ -29,7 +29,7 @@
 <div>
 <input type="text" class="form-control w-100 mt-1" name="datepick" id="datepicker" placeholder="タップしてください" readonly/>
 </div>
-<div>
+<div id="timesDiv">
 	<p class="mt-3"><span class="itemLine"><big>希望時刻</big></span></p>
 	<font color="red"><small>  *送迎を希望される場合、ご指定の時間や場所に応じられない場合があります。</small></font>
 <p class="mt-3"><span class="itemLine2">来所時刻</span>
@@ -47,8 +47,9 @@
 	</div>
 	<div id="fromWhere">
 	<div class="errorDiv" id="fromError">半角記号は入れないで下さい。</div>
-	<input tyle="text" name="fname" id="fName" placeholder="目印となるような場所名をご記入ください。" />
+	記入欄<input tyle="text" name="fname" id="fName" placeholder="分かりやすい場所名を記入" />
 	</div>
+	<br>
 <p class="mt-3"><span class="itemLine2">退所時刻</span>
 	<input type="time" class="form-control w-40 mt-1" name="endtime" id="end-time" value="16:00" min="11:00" max="18:00" disabled/></p>
 	<p class="mt-3"><input type="checkbox" name="ecar" id="eCar" value="eCar" disabled /><label for="eCar">送り希望</label></p>
@@ -62,7 +63,7 @@
 	</div>
 	<div id="toWhere">
 	<div class="errorDiv" id="toError">半角記号は入れないで下さい。</div>
-	<input tyle="text" name="tname" id="tName" placeholder="目印となるような場所名をご記入ください。" />
+	<input tyle="text" name="tname" id="tName" placeholder="分かりやすい場所名を記入" />
 	</div>
 </div>
 	<p class="mt-3"><span class="itemLine"><big>その他(自由記載)</big></span></p>
@@ -86,17 +87,23 @@ const select_type = document.getElementById('genre');
 const afterSchool = document.getElementById('afterSchool');
 const startCar = document.getElementById('sCar');
 const endCar = document.getElementById('eCar');
-
+const timesDiv = document.getElementById('timesDiv');
 select_type.onchange = () => {
 	if(select_type.selectedIndex == 1 || select_type.selectedIndex == 3){
-		//time.disabled = false;
+		timesDiv.style.display = "block";
+		/*
+		time.disabled = false;
 		e_time.disabled = false;
 		afterSchool.disabled = false;
 		startCar.disabled = false;
 		endCar.disabled = false;
+  		*/
 	}else{
+		timesDiv.style.display = "none";
+		/*
 		time.disabled = true;
 		e_time.disabled = true;
+		*/
 	}
 }
 
