@@ -209,7 +209,6 @@ const toNotPlace = document.getElementById("toNotPlace");
 document.getElementById('submit').addEventListener('click', () => {
 	let errCount = 0;
 	if(toWhere.style.display === "block"){
-		window.alert("toWhere is blocked.");
 		if(tName.value === ""){
 			toNotPlace.style.display = "block";
 			errCount = 1;
@@ -223,7 +222,6 @@ document.getElementById('submit').addEventListener('click', () => {
 		toNotPlace.style.display = "none";
 	}
 	if(fromWhere.style.display === "block"){
-		window.alert("fromWhere is blocked");
 		if(fName.value === ""){
 			fromNotPlace.style.display = "block";
 			errCount = 1;
