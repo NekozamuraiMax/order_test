@@ -205,15 +205,15 @@ const textError = document.getElementById("textError");
 document.getElementById('submit').addEventListener('click', () => {
 	if(regex.test(fromWhere.value) && startCar.checked === true){
 		fromError.style.display = "block";
-		return false;
+		event.preventDefault();
 	}else fromError.style.display = "none";
 	if(regex.test(toWhere.value) && endCar.checked === true){
 		toError.style.display = "block";
-		return false;
+		event.preventDefault();
 	}else toError.style.display = "none";
 	if(regex.test(textarea.value)){
 		textError.style.display = "block";
-		return false;
+		event.preventDefault();
 	}else textError.style.display = "none";
 	
 	if(window.confirm('この内容で申請して宜しいですか？')) return true;
