@@ -63,7 +63,7 @@
 	</div>
 	<div id="toWhere">
 	<div class="errorDiv" id="toError">半角記号は入れないで下さい。</div>
-	<input tyle="text" name="tname" id="tName" placeholder="分かりやすい場所名を記入" />
+	記入欄<input tyle="text" name="tname" id="tName" placeholder="分かりやすい場所名を記入" />
 	</div>
 </div>
 	<p class="mt-3"><span class="itemLine"><big>その他(自由記載)</big></span></p>
@@ -193,7 +193,7 @@ order.onchange = () => {
 	if(fromDiv.disabled !== true && fromSelect.selectedIndex === 2){
 		fromWhere.style.display = "block";
 	}else fromWhere.style.display = "none";
-	if(fromDiv.disabled !== true && toSelect.selectIndex === 1){
+	if(toDiv.disabled !== true && toSelect.selectIndex === 1){
 		toWhere.style.display = "block";
 	}else toWhere.style.display = "none";
 }
