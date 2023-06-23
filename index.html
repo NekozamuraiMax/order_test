@@ -209,11 +209,11 @@ document.getElementById('submit').addEventListener('click', () => {
 	if(fromSelect.selectedIndex===2 && startCar.checked === true){
 		if(fromWhere.value===""){
 			fromNotPlace.style.display = "block";
-			errCount++;
+			errCount = 1;
 		}else fromNotPlace.style.display = "none";
 		if(regex.test(fromWhere.value)){
 			fromError.style.display = "block";
-			errCount++;
+			errCount = 1;
 		}else fromError.style.display = "none";
 	}else{
 		fromError.style.display = "none";
@@ -222,11 +222,11 @@ document.getElementById('submit').addEventListener('click', () => {
 	if(toSelect.selectedIndex===1 && endCar.checked === true){
 		if(toWhere.value===""){
 			toNotPlace.style.display = "block";
-			errCount++;
+			errCount = 1;
 		}else toNotPlace.style.display = "none";
 		if(regex.test(toWhere.value)){
 			toError.style.display = "block";
-			errCount++;
+			errCount = 1;
 		}else toError.style.display = "none";
 	}else{
 		toError.style.display = "none";
@@ -234,7 +234,7 @@ document.getElementById('submit').addEventListener('click', () => {
 	}
 	if(regex.test(textarea.value)){
 		textError.style.display = "block";
-		errCount++;
+		errCount = 1;
 	}else textError.style.display = "none";
 	if(errCount > 0){
 		window.alert("記入内容に誤りがあります。");
