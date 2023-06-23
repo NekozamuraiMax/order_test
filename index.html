@@ -109,12 +109,7 @@ select_type.onchange = () => {
 }
 
 afterSchool.addEventListener('click', (e) => {
-	if(afterSchool.checked == true) time.disabled = true;
-	/*
-	else{
-		(sCar.checked == true) ? time.disabled = true : time.disabled = false;
-	}
- 	*/
+	afterSchool.checked == true ? time.disabled = true : time.disabled = false;
 });
 
 const fromDiv = document.getElementById("fromDiv");
