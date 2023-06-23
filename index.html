@@ -91,37 +91,50 @@ const timesDiv = document.getElementById('timesDiv');
 select_type.onchange = () => {
 	if(select_type.selectedIndex == 1 || select_type.selectedIndex == 3){
 		timesDiv.style.display = "block";
-		/*
 		time.disabled = false;
 		e_time.disabled = false;
 		afterSchool.disabled = false;
 		startCar.disabled = false;
 		endCar.disabled = false;
-  		*/
 	}else{
 		timesDiv.style.display = "none";
-		/*
 		time.disabled = true;
 		e_time.disabled = true;
-		*/
+		afterSchool.disabled = true;
+		startCar.disabled = true;
+		endCar.disabled = true;
 	}
 }
 
 afterSchool.addEventListener('click', (e) => {
 	if(afterSchool.checked == true) time.disabled = true;
+	/*
 	else{
 		(sCar.checked == true) ? time.disabled = true : time.disabled = false;
 	}
+ 	*/
 });
 
 const fromDiv = document.getElementById("fromDiv");
 sCar.addEventListener('click', (e) => {
-	sCar.checked == true ? fromDiv.style.display = "block" : fromDiv.style.display = "none";
+	if(sCar.checked == true){
+		fromDiv.disabled = false;
+		fromDiv.style.display = "block";
+	}else{
+		fromDiv.disabled = true;
+		fromDiv.style.display = "none";
+	}
 });
 
 const toDiv = document.getElementById("toDiv");
 eCar.addEventListener('click', (e) => {
-	eCar.checked == true ? toDiv.style.display = "block" : toDiv.style.display = "none";
+	if(eCar.checked == true){
+		toDiv.disabled = false;
+		toDiv.style.display = "block";
+	}else{
+		toDiv.disabled = true;
+		toDiv.style.display = "none";
+	}
 });	
 
 const today = new Date();
