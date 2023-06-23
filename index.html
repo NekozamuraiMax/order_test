@@ -91,7 +91,7 @@ const timesDiv = document.getElementById('timesDiv');
 select_type.onchange = () => {
 	if(select_type.selectedIndex == 1 || select_type.selectedIndex == 3){
 		timesDiv.style.display = "block";
-		time.disabled = false;
+		//time.disabled = false;
 		e_time.disabled = false;
 		afterSchool.disabled = false;
 		startCar.disabled = false;
@@ -190,10 +190,10 @@ order.onchange = () => {
 	}else{
 		submit.disabled = true;
 	}
-	if(fromDiv.disabled !== true && fromSelect.selectedIndex === 2){
+	if(sCar.checked === true && fromSelect.selectedIndex === 2){
 		fromWhere.style.display = "block";
 	}else fromWhere.style.display = "none";
-	if(toDiv.disabled !== true && toSelect.selectIndex === 1){
+	if(eCar === true && toSelect.selectIndex === 1){
 		toWhere.style.display = "block";
 	}else toWhere.style.display = "none";
 }
