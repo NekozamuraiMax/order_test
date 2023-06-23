@@ -203,11 +203,11 @@ const fromError = document.getElementById("fromError");
 const toError = document.getElementById("toError");
 const textError = document.getElementById("textError");
 document.getElementById('submit').addEventListener('click', () => {
-	if(regex.test(fromWhere.value)){
+	if(regex.test(fromWhere.value) && startCar.checked === true){
 		fromError.style.display = "block";
 		return;
 	}else fromError.style.display = "none";
-	if(regex.test(toWhere.value)){
+	if(regex.test(toWhere.value) && endCar.checked === true){
 		toError.style.display = "block";
 		return;
 	}else toError.style.display = "none";
