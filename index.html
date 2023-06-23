@@ -116,8 +116,8 @@ afterSchool.addEventListener('click', (e) => {
 });
 
 const fromDiv = document.getElementById("fromDiv");
-sCar.addEventListener('click', (e) => {
-	if(sCar.checked == true){
+startCar.addEventListener('click', (e) => {
+	if(startCar.checked == true){
 		fromDiv.disabled = false;
 		fromDiv.style.display = "block";
 	}else{
@@ -127,8 +127,8 @@ sCar.addEventListener('click', (e) => {
 });
 
 const toDiv = document.getElementById("toDiv");
-eCar.addEventListener('click', (e) => {
-	if(eCar.checked == true){
+endCar.addEventListener('click', (e) => {
+	if(endCar.checked == true){
 		toDiv.disabled = false;
 		toDiv.style.display = "block";
 	}else{
@@ -190,10 +190,10 @@ order.onchange = () => {
 	}else{
 		submit.disabled = true;
 	}
-	if(sCar.checked === true && fromSelect.selectedIndex === 2){
+	if(startCar.checked === true && fromSelect.selectedIndex === 2){
 		fromWhere.style.display = "block";
 	}else fromWhere.style.display = "none";
-	if(eCar.checked === true && toSelect.selectIndex === 1){
+	if(endCar.checked === true && toSelect.selectIndex === 1){
 		toWhere.style.display = "block";
 	}else toWhere.style.display = "none";
 }
