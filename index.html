@@ -243,9 +243,10 @@ document.getElementById('submit').addEventListener('click', () => {
 	if(errCount > 0){
 		window.alert("記入内容に誤りがあります。");
 		event.preventDefault();
+	}else{
+		if(window.confirm('この内容で申請して宜しいですか？')) return true;
+		else event.preventDefault();
 	}
-	if(window.confirm('この内容で申請して宜しいですか？')) return true;
-	else event.preventDefault();
 }, false);
 
 document.getElementById('cancel').addEventListener('click', () => {
