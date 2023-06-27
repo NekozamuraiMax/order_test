@@ -63,7 +63,12 @@ $(function(){
 	$('form').submit(function(){
   		let res = $('form').serialize();
 		$.post('https://script.google.com/macros/s/AKfycbyCiL0cL_JPghM1ufI60IJAP0d7LFTXYDPnxoNORNbqwf4ggfZoW_v00mOurCYmRV9_mA/exec', res);
-		liff.closeWindow();
+		$('#splash').addClass("close");
+		$('splash').delay(1200).fadeIn('slow', function(){
+			$('#splash-end-logo").style.display = "block";
+		});
+		
+		setTimeout(liff.closeWindow(), 3000);
 		return false;
 	});
 });
