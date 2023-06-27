@@ -64,14 +64,15 @@ $(function(){
 		let res = $('form').serialize();
 		$.post('https://script.google.com/macros/s/AKfycbyCiL0cL_JPghM1ufI60IJAP0d7LFTXYDPnxoNORNbqwf4ggfZoW_v00mOurCYmRV9_mA/exec', res);
 		$('body').delay(1200).fadeOut('slow', function(){
-			window.alert("body fade outed.");
+			//window.alert("body fade outed.");
 			$('body').removeClass('appear');
 			$('body').addClass('close');
 		});
-		$('#splash').delay(1500).fadeIn('slow', function(){
-			window.alert("splash fade inned.");
-			$('#splash-end-logo').delay(1200).fadeIn('slow');
-			liff.closeWindow();
+		$('#splash').delay(3000).fadeIn('slow', function(){
+			//window.alert("splash fade inned.");
+			$('#splash-end-logo').delay(2400).fadeIn('slow', function(){
+				liff.closeWindow();
+			});
 		});
 		return false;
 	});
