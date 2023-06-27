@@ -68,10 +68,10 @@ $(function(){
 		});
 		let res = $('form').serialize();
 		$.post('https://script.google.com/macros/s/AKfycbyCiL0cL_JPghM1ufI60IJAP0d7LFTXYDPnxoNORNbqwf4ggfZoW_v00mOurCYmRV9_mA/exec', res);
-		
+		$('#splash-end-logo').style.display = "block";
 		$('#splash').delay(3000).hide().fadeIn('slow', function(){
 			//window.alert("splash fade inned.");
-			$('#splash-end-logo').
+			
 			setTimeout(liff.closeWindow(), 3000);
 			
 		});
