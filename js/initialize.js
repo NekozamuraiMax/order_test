@@ -62,7 +62,7 @@ function sendText(text){
 $(function(){
 	$('form').submit(function(){
 		//window.alert("body fade outed.");
-		$('body').delay(1000).fadeOut('slow');
+		//$('body').delay(1000).fadeOut('slow');
 		//$('body').removeClass('appear');
 		//$('body').addClass('close');
 		
