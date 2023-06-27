@@ -37,6 +37,7 @@ body.appear #order{
 }
 
 #splash-end-logo{
+	display: none;
 	position: absolute;
 	top: 50%;
 	left: 50%;
