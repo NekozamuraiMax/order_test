@@ -65,7 +65,11 @@ body.appear .splashbg{
 	animation-fill-mode:forwards;
 }
 
-body.close .splashbg{
+.splashbg-end{
+	display: none;
+}
+
+body.close .splashbg-end{
     display: block;
     content: "";
     position:fixed;
