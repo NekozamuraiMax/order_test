@@ -61,8 +61,8 @@ function sendText(text){
 
 $(function(){
 	$('form').submit(function(){
-		window.alert("body fade outed.");
-		$('body').removeClass('appear');
+		//window.alert("body fade outed.");
+		//$('body').removeClass('appear');
 		$('body').addClass('close');
 		
   		let res = $('form').serialize();
