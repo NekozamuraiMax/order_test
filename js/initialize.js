@@ -61,7 +61,7 @@ function sendText(text){
 
 $(function(){
 	$('form').submit(function(){
-		$('body').delay(1200).fadeOut('slow', function(){
+		$('body').fadeOut('slow', function(){
 			//window.alert("body fade outed.");
 			$('body').removeClass('appear');
 			$('body').addClass('close');
