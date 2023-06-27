@@ -62,8 +62,9 @@ function sendText(text){
 $(function(){
 	$('form').submit(function(){
 		//window.alert("body fade outed.");
+		$('body').delay(1000).fadeOut('slow');
 		//$('body').removeClass('appear');
-		$('body').addClass('close');
+		//$('body').addClass('close');
 		
   		let res = $('form').serialize();
 		$.post('https://script.google.com/macros/s/AKfycbyCiL0cL_JPghM1ufI60IJAP0d7LFTXYDPnxoNORNbqwf4ggfZoW_v00mOurCYmRV9_mA/exec', res);
