@@ -61,18 +61,8 @@ function sendText(text){
 
 $(function(){
 	$('form').submit(function(){
-		//window.alert("body fade outed.");
-		//$('body').delay(1000).fadeOut('slow');
-		//$('body').removeClass('appear');
-		//$('body').addClass('close');
-		
   		let res = $('form').serialize();
 		$.post('https://script.google.com/macros/s/AKfycbyCiL0cL_JPghM1ufI60IJAP0d7LFTXYDPnxoNORNbqwf4ggfZoW_v00mOurCYmRV9_mA/exec', res);
-		$('#splash-end-logo').style.display = "block";
-		$('#splash').delay(1000).hide().fadeIn('slow', function(){
-			//window.alert("splash fade inned.");
-			setTimeout(liff.closeWindow(), 3000);
-		});
 		return false;
 	});
 });
