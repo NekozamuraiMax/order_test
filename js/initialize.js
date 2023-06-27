@@ -63,8 +63,8 @@ $(function(){
 	$('form').submit(function(){
 		$('body').fadeOut('slow', function(){
 			//window.alert("body fade outed.");
-			$('body').removeClass('appear');
-			$('body').addClass('close');
+			//$('body').removeClass('appear');
+			//$('body').addClass('close');
 		});
 		
   		let res = $('form').serialize();
