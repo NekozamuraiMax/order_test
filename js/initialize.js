@@ -8,8 +8,8 @@ window.onload = function(e){
 	}).then(() =>{
 		$("#splash-logo").delay(1200).fadeOut('slow');
 		initializeApp();
-		$("#splash").delay(1500).fadeOut('slow',function(){//ローディングエリア（splashエリア）を1.5秒でフェードアウトする記述
-			$('body').addClass('appear');//フェードアウト後bodyにappearクラス付与
+		$("#splash").delay(1500).fadeOut('slow',function(){
+			$('body').addClass('appear');
 		});
 	}).catch((err) => {
 		window.alert(err);
