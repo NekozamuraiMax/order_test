@@ -71,9 +71,9 @@ $(function(){
 		
 		$('#splash').delay(3000).hide().fadeIn('slow', function(){
 			//window.alert("splash fade inned.");
-			$('#splash-end-logo').delay(1200).hide().fadeIn('slow', function(){
-				setTimeout(liff.closeWindow(), 3000);
-			});
+			$('#splash-end-logo').
+			setTimeout(liff.closeWindow(), 3000);
+			
 		});
 		return false;
 	});
