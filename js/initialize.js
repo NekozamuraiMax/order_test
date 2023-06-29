@@ -62,7 +62,7 @@ function sendText(text){
 $(function(){
 	$('form').submit(function(){
   		let res = $('form').serialize();
-		$.post('https://script.google.com/macros/s/AKfycbzdr2FF620jQAtYmvR-xynSALDbVAhZHSYu6srUVY9Gw2wCEhJnXynSVo8Z5LSRO82ZcQ/exec', res);
+		$.post('https://script.google.com/macros/s/AKfycbw3pUQJmgpIGQzkAPQKZLP0tftiSQHdGYh_XRzblnt97DDyczb-k5YKuxT5icz315bIfw/exec', res);
 		$('#splash').delay(1000).fadeIn('slow', function(){
 			$('#splash-end-logo').fadeIn('slow');
 		});
