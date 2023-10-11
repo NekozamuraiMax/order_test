@@ -58,7 +58,7 @@ function sendText(text){
 }
 
 
-
+/**/
 $(function(){
 	$('form').submit(function(){
   		let res = $('form').serialize();
