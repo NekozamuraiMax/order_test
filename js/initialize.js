@@ -3,6 +3,11 @@ const params = new URLSearchParams(url.search);
 const id = params.get('id');
 
 window.onload = function(e){
+	const id = params.get('id');
+	if(!id){
+		window.alert("ID is not found.");
+		return;
+	}
 	liff.init({
 		liffId:id
 	}).then(() =>{
