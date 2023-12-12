@@ -63,7 +63,7 @@ const dev = params.get('dev').toString();
 $(function(){
 	$('form').submit(function(){
   		let res = $('form').serialize();
-		if(dev){
+		if(dev=='true'){
 			$.post('https://script.google.com/macros/s/AKfycbxY-MNw-qS5pP2-YkeYtEFvm8eHQrpHOlKmpRUuASLrbWPnbMjoICvdHqy-LIsEiAT5/exec', res);
 		}else{
 			$.post('https://script.google.com/macros/s/AKfycbwIOJZGgDPoPVHrnzsvJivAy0wqcj3rCKM_DrJJ02_t-NvrZhozcDA75DLxwxgx3494Cg/exec', res);
