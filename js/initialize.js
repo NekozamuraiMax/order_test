@@ -2,7 +2,7 @@ const url = new URL(document.location);
 const params = new URLSearchParams(url.search);
 
 document.addEventListener("DOMContentLoaded", (event) => {
-	const id = params.get('id');
+	const id = params.get('id').toString();
 	if(!id){
 		window.alert("ID is not found.");
 		return;
