@@ -1,7 +1,7 @@
 const url = new URL(document.location);
 const params = new URLSearchParams(url.search);
 
-window.onload = function(e){
+document.addEventListener("DOMContentLoaded", (event) => {
 	const id = params.get('id');
 	if(!id){
 		window.alert("ID is not found.");
@@ -19,7 +19,7 @@ window.onload = function(e){
 		window.alert(err);
 		console.log('LIFF Initialization failed ', err);
 	});
-};
+});
 
 const name = params.get('name').toString();
 const dev = params.get('dev').toString();
