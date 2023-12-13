@@ -65,7 +65,8 @@ function sendText(text){
 }
 
 $(function(){
-	$('form').submit(function(){
+	$('form').submit(function(event){
+		event.preventDefault();
   		let res = $('form').serialize();
 		$.post('https://script.google.com/macros/s/AKfycbwIOJZGgDPoPVHrnzsvJivAy0wqcj3rCKM_DrJJ02_t-NvrZhozcDA75DLxwxgx3494Cg/exec', res);
 		$('#splash').delay(1000).fadeIn('slow', function(){
