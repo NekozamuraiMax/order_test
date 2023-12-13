@@ -1,8 +1,8 @@
 const url = new URL(document.location);
 const params = new URLSearchParams(url.search);
-
+const id = params.get('id');
+window.alert("(DEBUG)ID=" + id);
 document.addEventListener("DOMContentLoaded", (event) => {
-	const id = params.get('id');
 	if(!id){
 		window.alert("ID is not found. ID=" + id);
 		return;
