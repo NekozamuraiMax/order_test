@@ -1,8 +1,10 @@
 const url = new URL(document.location);
 const params = new URLSearchParams(url.search);
+window.alert("URL Search:" + url.search);
 const id = params.get('id');
-//window.alert("(DEBUG)ID=" + id);
+window.alert("(DEBUG)ID=" + id);
 window.onload = function(e){
+	window.alert(id);
 	if(!id){
 		window.alert("ID is not found. ID=" + id);
 		return;
