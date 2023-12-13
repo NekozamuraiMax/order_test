@@ -2,9 +2,9 @@ const url = new URL(document.location);
 const params = new URLSearchParams(url.search);
 
 document.addEventListener("DOMContentLoaded", (event) => {
-	const id = params.get('id').toString();
+	const id = params.get('id');
 	if(!id){
-		window.alert("ID is not found.");
+		window.alert("ID is not found. ID=" + id);
 		return;
 	}
 	liff.init({
