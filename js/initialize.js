@@ -24,7 +24,6 @@ window.onload = function(e){
 };
 
 const name = params.get('name').toString();
-const dev = params.get('dev').toString();
 function initializeApp() {
     // ログインチェック
     if (liff.isLoggedIn()) {
