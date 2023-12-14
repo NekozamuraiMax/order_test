@@ -1,6 +1,6 @@
 const url = new URL(document.location);
 const params = new URLSearchParams(url.search);
-window.alert("URL Search:" + url.search);
+//window.alert("URL Search:" + url.search);
 const id = params.get('id');
 window.onload = function(e){
 	if(!id){
@@ -20,8 +20,9 @@ window.onload = function(e){
 		console.log('LIFF Initialization failed ', err);
 	});
 };
-const purl = params.get('purl').toString();
+//const purl = params.get('purl').toString();
 const name = params.get('name').toString();
+window.alert("name:" + name);
 function initializeApp() {
     // ログインチェック
     if (liff.isLoggedIn()) {
