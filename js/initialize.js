@@ -1,6 +1,6 @@
 const url = new URL(document.location);
 const params = new URLSearchParams(url.search);
-//window.alert("URL Search:" + url.search);
+window.alert("URL Search:" + url.search);
 const id = params.get('id');
 window.onload = function(e){
 	if(!id){
