@@ -1,10 +1,8 @@
 const url = new URL(document.location);
 const params = new URLSearchParams(url.search);
-window.alert("URL Search:" + url.search);
+//window.alert("URL Search:" + url.search);
 const id = params.get('id');
-window.alert("(DEBUG)ID=" + id);
 window.onload = function(e){
-	window.alert(id);
 	if(!id){
 		window.alert("ID is not found. ID=" + id);
 		return;
@@ -22,7 +20,7 @@ window.onload = function(e){
 		console.log('LIFF Initialization failed ', err);
 	});
 };
-
+const purl = params.get('purl').toString();
 const name = params.get('name').toString();
 function initializeApp() {
     // ログインチェック
@@ -67,7 +65,8 @@ $(function(){
 	$('form').submit(function(event){
 		event.preventDefault();
   		let res = $('form').serialize();
-		$.post('https://script.google.com/macros/s/AKfycbwIOJZGgDPoPVHrnzsvJivAy0wqcj3rCKM_DrJJ02_t-NvrZhozcDA75DLxwxgx3494Cg/exec', res);
+		$.post(purl, res);
+		//$.post('https://script.google.com/macros/s/AKfycbwIOJZGgDPoPVHrnzsvJivAy0wqcj3rCKM_DrJJ02_t-NvrZhozcDA75DLxwxgx3494Cg/exec', res);
 		$('#splash').delay(1000).fadeIn('slow', function(){
 			$('#splash-end-logo').fadeIn('slow');
 		});
