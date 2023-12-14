@@ -1,6 +1,6 @@
 const url = new URL(document.location);
 const params = new URLSearchParams(url.search);
-window.alert("URL Search:" + url.search);
+//window.alert("URL Search:" + url.search);
 const id = params.get('id');
 
 window.onload = function(e){
@@ -10,7 +10,8 @@ window.onload = function(e){
 	}
 	liff.init({
 		liffId:id
-	}).then(() =>{
+	}).then((data) =>{
+		window.alert(data.context.state);
 		$("#splash-logo").delay(1200).fadeOut('slow');
 		initializeApp();
 		$("#splash").delay(1500).fadeOut('slow',function(){
@@ -21,9 +22,9 @@ window.onload = function(e){
 		console.log('LIFF Initialization failed ', err);
 	});
 };
-window.alert("param:" + params);
+//window.alert("param:" + params);
 const name = params.get('name').toString();
-window.alert("name:" + name);
+//window.alert("name:" + name);
 //const purl = params.get('purl').toString();
 //window.alert("POST url:" + purl);
 function initializeApp() {
