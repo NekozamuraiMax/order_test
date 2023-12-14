@@ -2,6 +2,7 @@ const url = new URL(document.location);
 const params = new URLSearchParams(url.search);
 //window.alert("URL Search:" + url.search);
 const id = params.get('id');
+
 window.onload = function(e){
 	if(!id){
 		window.alert("ID is not found. ID=" + id);
@@ -20,6 +21,7 @@ window.onload = function(e){
 		console.log('LIFF Initialization failed ', err);
 	});
 };
+window.alert("param:" + param);
 const name = params.get('name').toString();
 window.alert("name:" + name);
 const purl = params.get('purl').toString();
