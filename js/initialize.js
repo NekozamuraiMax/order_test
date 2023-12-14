@@ -21,7 +21,7 @@ window.onload = function(e){
 		console.log('LIFF Initialization failed ', err);
 	});
 };
-window.alert("param:" + param);
+window.alert("param:" + params);
 const name = params.get('name').toString();
 window.alert("name:" + name);
 const purl = params.get('purl').toString();
