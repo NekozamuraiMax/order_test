@@ -22,10 +22,11 @@ window.onload = function(e){
 	});
 };
 //window.alert("param:" + params);
-const name = params.get('name').toString();
-window.alert("name:" + name);
-const purl = params.get('purl').toString();
-window.alert("POST url:" + purl);
+const data = params.get('name').toString();
+window.alert("data:" + name);
+const splitdata = data.split('_purl_');
+const name = splitdata[0];
+const purl = splitdata[1];
 function initializeApp() {
     // ログインチェック
     if (liff.isLoggedIn()) {
