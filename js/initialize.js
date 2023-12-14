@@ -1,6 +1,6 @@
 const url = new URL(document.location);
 const params = new URLSearchParams(url.search);
-//window.alert("URL Search:" + url.search);
+window.alert("URL Search:" + url.search);
 const id = params.get('id');
 
 window.onload = function(e){
@@ -24,8 +24,8 @@ window.onload = function(e){
 window.alert("param:" + params);
 const name = params.get('name').toString();
 window.alert("name:" + name);
-const purl = params.get('purl').toString();
-window.alert("POST url:" + purl);
+//const purl = params.get('purl').toString();
+//window.alert("POST url:" + purl);
 function initializeApp() {
     // ログインチェック
     if (liff.isLoggedIn()) {
