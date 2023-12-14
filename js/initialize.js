@@ -20,9 +20,10 @@ window.onload = function(e){
 		console.log('LIFF Initialization failed ', err);
 	});
 };
-//const purl = params.get('purl').toString();
 const name = params.get('name').toString();
+const purl = params.get('purl').toString();
 window.alert("name:" + name);
+window.alert("POST url:" + purl);
 function initializeApp() {
     // ログインチェック
     if (liff.isLoggedIn()) {
