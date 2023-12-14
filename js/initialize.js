@@ -10,8 +10,7 @@ window.onload = function(e){
 	}
 	liff.init({
 		liffId:id
-	}).then((data) =>{
-		window.alert(data.context.state);
+	}).then(() =>{
 		$("#splash-logo").delay(1200).fadeOut('slow');
 		initializeApp();
 		$("#splash").delay(1500).fadeOut('slow',function(){
@@ -24,7 +23,7 @@ window.onload = function(e){
 };
 //window.alert("param:" + params);
 const name = params.get('name').toString();
-//window.alert("name:" + name);
+window.alert("name:" + name);
 //const purl = params.get('purl').toString();
 //window.alert("POST url:" + purl);
 function initializeApp() {
