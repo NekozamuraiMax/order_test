@@ -21,8 +21,8 @@ window.onload = function(e){
 	});
 };
 const name = params.get('name').toString();
-const purl = params.get('purl').toString();
 window.alert("name:" + name);
+const purl = params.get('purl').toString();
 window.alert("POST url:" + purl);
 function initializeApp() {
     // ログインチェック
