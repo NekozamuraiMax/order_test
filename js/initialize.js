@@ -23,10 +23,12 @@ window.onload = function(e){
 };
 //window.alert("param:" + params);
 const data = params.get('name').toString();
-window.alert("data:" + name);
+window.alert("data:" + data);
 const splitdata = data.split('_purl_');
 const name = splitdata[0];
+window.alert("name:" + name);
 const purl = splitdata[1];
+window.alert("POST URL:" + purl);
 function initializeApp() {
     // ログインチェック
     if (liff.isLoggedIn()) {
